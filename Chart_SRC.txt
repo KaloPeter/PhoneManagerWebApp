@@ -1,0 +1,2 @@
+https://canvasjs.com/asp-net-mvc-charts/
+https://canvasjs.com/docs/charts/integration/asp-net-mvc-charts/types/asp-net-mvc-pie-charts/
