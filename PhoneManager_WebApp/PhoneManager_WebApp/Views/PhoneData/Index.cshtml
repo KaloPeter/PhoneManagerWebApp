@@ -1,0 +1,153 @@
+﻿@using PhoneManager_WebApp.Models;
+@using System.Data;
+
+
+@model PhoneDataViewBag
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PhoneData</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+<body>
+
+    <div class="grid-container">      
+             <div class="Country">
+               
+                <div class="scrollit">
+                 <table>
+                     <caption>Country</caption>
+                <tr>
+                    <th>CountryCallingCode</th>
+                    <th>CountryName</th>
+                </tr>
+
+                @foreach (var country in Model.CountryList)
+                {
+                    @:<tr>
+                    @:   <td>@country.CountryCallingCode</td>
+                    @:   <td>@country.Name</td>
+                    @:</tr>
+                }
+            </table>
+                </div>
+        </div> 
+        <div class="Area">
+            <div class="scrollit">
+                    <table>
+                            <caption>Area</caption>
+                <tr>
+                    <th>CountryCallingCode</th>
+                    <th>AreaCallingCode</th>
+                    <th>AreaName</th>
+                </tr>
+
+                @foreach (var area in Model.AreaList)
+                {
+                    @:<tr>
+                    @:   <td>@area.CountryCallingCode</td>
+                    @:   <td>@area.AreaCallingCode</td>
+                    @:   <td>@area.AreaName</td>
+                    @:</tr>
+                }
+            </table>
+            </div>
+        </div>
+       
+        <div class="InputData">
+
+               <div class="scrollit">
+                      <table>
+                           <caption>InputData</caption>
+                <tr>
+                    <th>SourceCallDate</th>
+                    <th>SourceCallTime</th>
+                    <th>SourcePhoneNumber</th>
+                    <th>DestinationPhoneNumber</th>
+                    <th>CallingTime</th>
+                </tr>
+
+                @foreach (var idl in Model.InputDataList)
+                {
+                    @:<tr>
+                    @:   <td>@idl.SourceCallDate</td>
+                    @:   <td>@idl.SourceCallTime</td>
+                    @:   <td>@idl.SourcePhoneNumber</td>
+                    @:   <td>@idl.DestinationPhoneNumber</td>
+                    @:   <td>@idl.CallingTime</td>
+                    @:</tr>
+                }
+            </table>
+               </div>
+             
+
+        </div>
+   
+        <div class="OutputData">
+
+             <div class="scrollit">
+                 <table>
+                      <caption>OutputData</caption>
+                <tr>
+                    <th>CountryName</th>
+                    <th>AreaName</th>
+                    <th>CountryCallingCode</th>
+                    <th>AreaCallingCode</th>
+                    <th>SumCallingTime</th>
+                </tr>
+
+                @foreach (var oud in Model.OutputDataList)
+                {
+                    @:<tr>
+                    @:   <td>@oud.CountryName</td>
+                    @:   <td>@oud.AreaName</td>
+                    @:   <td>@oud.CountryCallingCode</td>
+                    @:   <td>@oud.AreaCallingCode</td>
+                    @:   <td>@oud.SumCallingTime</td>
+                    @:</tr>
+                }
+            </table>
+             </div>
+
+          
+        </div>
+        <div class="OutputPieChart">
+             <div id="chartContainerPie" style="width: 100%;"></div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainerPie", {
+                title: {
+                    text: "Phone Calling Time By Country/Area(OutputData)"
+                },
+                animationEnabled: true,
+                legend: {
+                    verticalAlign: "center",
+                    horizontalAlign: "left",
+                    fontSize: 20,
+                    fontFamily: "Helvetica"
+                },
+                theme: "light2",
+                data: [
+                {
+                    type: "pie",
+                    indexLabelFontFamily: "Garamond",
+                    indexLabelFontSize: 20,
+                    indexLabel: "{label} {y}sec",
+                    startAngle: -20,
+                    showInLegend: true,
+                    toolTipContent: "{legendText} {y}sec",
+                    dataPoints: @Html.Raw(Model.OutPutDataJSON)
+                }
+                ]
+            });
+            chart.render();
+        };
+    </script>
+        </div>
+    </div>
+</body>
+</html>

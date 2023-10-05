@@ -1,0 +1,48 @@
+﻿.Area {
+    grid-area: area;
+}
+
+.InputData {
+    grid-area: input;
+}
+
+.OutputData {
+    grid-area: output;
+}
+
+.Country {
+    grid-area: country;
+}
+
+.OutputPieChart {
+    grid-area: outputpc;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'country area'
+        'input output '
+        'input output'
+        'outputpc outputpc';
+    gap: 5px;
+    background-color: #2196F3;
+    padding: 3px;
+}
+
+    .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 5px 0;
+        font-size: 15px;
+    }
+
+.scrollit {
+    overflow: scroll;
+    height: 270px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

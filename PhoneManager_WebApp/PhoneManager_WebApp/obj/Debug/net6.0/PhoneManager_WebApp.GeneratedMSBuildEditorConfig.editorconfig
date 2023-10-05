@@ -1,0 +1,21 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PhoneManager_WebApp
+build_property.RootNamespace = PhoneManager_WebApp
+build_property.ProjectDir = D:\C#Projects\OwnProjects\PhoneManager_WebApp\PhoneManager_WebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\C#Projects\OwnProjects\PhoneManager_WebApp\PhoneManager_WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/C\#Projects/OwnProjects/PhoneManager_WebApp/PhoneManager_WebApp/Views/PhoneData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvbmVEYXRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
